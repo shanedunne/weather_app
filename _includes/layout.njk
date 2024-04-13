@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Whether Weather</title>
+        <link rel="stylesheet" href="/css/bulma.css">
+        <!--Source for Bulma theme: https://jenil.github.io/bulmaswatch/cerulean/ -->
+        <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css">
+
+
+        <script src="https://kit.fontawesome.com/ab94d40537.js" crossorigin="anonymous"></script>
+        <script src="js/bulma.js"></script>
+        <script src="/js/weather_data.js"></script>
+        <script src="/js/weather_codes.js"></script>
+        <script type="text/javascript" src="/js/weather_display.js" ></script>
+    </head>
+    <body>
+        {% include "nav.njk" %}
+        {{ content | safe }}
+        {% include "footer.njk" %}
+    </body>
+</html>

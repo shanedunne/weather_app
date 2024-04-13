@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Whether Weather</title>
+        <link rel="stylesheet" href="/css/bulma.css">
+        <!--Source for Bulma theme: https://jenil.github.io/bulmaswatch/cerulean/ -->
+        <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css">
+
+
+        <script src="https://kit.fontawesome.com/ab94d40537.js" crossorigin="anonymous"></script>
+        <script src="js/bulma.js"></script>
+        <script src="/js/weather_data.js"></script>
+        <script src="/js/weather_codes.js"></script>
+        <script type="text/javascript" src="/js/weather_display.js" ></script>
+    </head>
+    <body>
+        <header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://bulma.io">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item"> Home </a>
+
+                <a class="navbar-item"> Favourite Locations </a>
+
+                <a class="navbar-item"> Preferences </a>
+            </div>
+        </div>
+    </nav>
+</header>
+        <main class="columns is-multiline box has-background-white">
+  <div class="column is-12 has-text-centered">
+    <p class="is-size-1">
+      Waterford, Ireland
+    </p>
+    <p class="is-size-3">
+      Todays Weather Summary
+    </p>
+  </div>
+  <div class="column is-4 is-offset-4">
+    <section class="card">
+      <header class="card-header">
+        <p class="card-header-title is-size-4 is-centered">Today</p>
+      </header>
+      <article class="card-content px-1">
+        <div class="has-text-centered">
+          <p class="is-size-6 mb-2 is-centered">Mostly Dry with sunndy spells</p>
+        </div>
+        
+        <p class="is-size-7">Temp: <span class="is-pulled-right">H 20°C / L
+            15°C</span></p>
+        <p class="is-size-7">Humidity: <span class="is-pulled-right">78%</span>
+        </p>
+        <p class="is-size-7">Wind: <span class="is-pulled-right">12km/h</span></p>
+        <p class="is-size-7">Sunrise: <span class="is-pulled-right">06:54</span></p>
+        <p class="is-size-7">Sunset: <span class="is-pulled-right">21:34</span></p>
+      </article>
+      <footer class="card-footer">
+      </footer>
+    </section>
+  </div>
+  <div class="column is-12 has-text-centered">
+    <p class="is-size-2">
+      Hourly breakdown
+    </p>
+  </div>
+  <!--https://www.geeksforgeeks.org/bulma-table-container/-->
+<div class="column is-10 is-offset-1 ml-4 mr-4 has-text-centered"> 
+    <div class="table-container"> 
+      <table class="table has-text-centered"> 
+        <tbody>
+          <tr> 
+            <th class="tg-0lax">Time</th> 
+            <td class="tg-0lax time">00:00</td> 
+            <td class="tg-0lax time">01:00</td> 
+            <td class="tg-0lax time">02:00</td>
+            <td class="tg-0lax time">03:00</td>
+            <td class="tg-0lax time">04:00</td>
+            <td class="tg-0lax time">05:00</td>
+            <td class="tg-0lax time">06:00</td>
+            <td class="tg-0lax time">07:00</td>
+            <td class="tg-0lax time">08:00</td>
+            <td class="tg-0lax time">09:00</td>
+            <td class="tg-0lax time">10:00</td>
+            <td class="tg-0lax time">11:00</td>
+            <td class="tg-0lax time">12:00</td>
+            <td class="tg-0lax time">13:00</td>
+            <td class="tg-0lax time">14:00</td>
+            <td class="tg-0lax time">15:00</td>
+            <td class="tg-0lax time">16:00</td>
+            <td class="tg-0lax time">17:00</td>
+            <td class="tg-0lax time">18:00</td>
+            <td class="tg-0lax time">19:00</td>
+            <td class="tg-0lax time">20:00</td>
+            <td class="tg-0lax time">21:00</td>
+            <td class="tg-0lax time">22:00</td>
+            <td class="tg-0lax time">23:00</td>
+          </tr> 
+          <tr> 
+            <th class="tg-0lax">Temp:</th>
+            <td class="tg-0lax">a</td> 
+            <td class="tg-0lax">b</td> 
+            <td class="tg-0lax">c</td> 
+            <td class="tg-0lax">d</td> 
+            <td class="tg-0lax">e</td> 
+            <td class="tg-0lax">f</td> 
+            <td class="tg-0lax">g</td> 
+            <td class="tg-0lax">h</td> 
+            <td class="tg-0lax">i</td> 
+            <td class="tg-0lax">j</td> 
+            <td class="tg-0lax">k</td> 
+            <td class="tg-0lax">l</td> 
+            <td class="tg-0lax">m</td> 
+            <td class="tg-0lax">n</td> 
+            <td class="tg-0lax">o</td> 
+            <td class="tg-0lax">p</td> 
+            <td class="tg-0lax">q</td> 
+            <td class="tg-0lax">r</td> 
+            <td class="tg-0lax">s</td> 
+            <td class="tg-0lax">t</td> 
+            <td class="tg-0lax">u</td> 
+            <td class="tg-0lax">v</td> 
+            <td class="tg-0lax">w</td> 
+            <td class="tg-0lax">x</td>
+          </tr> 
+          <tr> 
+            <th class="tg-0lax">Feels like:</th>
+            <td class="tg-0lax">a</td> 
+            <td class="tg-0lax">b</td> 
+            <td class="tg-0lax">c</td> 
+            <td class="tg-0lax">d</td> 
+            <td class="tg-0lax">e</td> 
+            <td class="tg-0lax">f</td> 
+            <td class="tg-0lax">g</td> 
+            <td class="tg-0lax">h</td> 
+            <td class="tg-0lax">i</td> 
+            <td class="tg-0lax">j</td> 
+            <td class="tg-0lax">k</td> 
+            <td class="tg-0lax">l</td> 
+            <td class="tg-0lax">m</td> 
+            <td class="tg-0lax">n</td> 
+            <td class="tg-0lax">o</td> 
+            <td class="tg-0lax">p</td> 
+            <td class="tg-0lax">q</td> 
+            <td class="tg-0lax">r</td> 
+            <td class="tg-0lax">s</td> 
+            <td class="tg-0lax">t</td> 
+            <td class="tg-0lax">u</td> 
+            <td class="tg-0lax">v</td> 
+            <td class="tg-0lax">w</td> 
+            <td class="tg-0lax">x</td>
+          </tr> 
+          <tr> 
+            <th class="tg-0lax">Rain:</th>
+            <td class="tg-0lax">a</td> 
+            <td class="tg-0lax">b</td> 
+            <td class="tg-0lax">c</td> 
+            <td class="tg-0lax">d</td> 
+            <td class="tg-0lax">e</td> 
+            <td class="tg-0lax">f</td> 
+            <td class="tg-0lax">g</td> 
+            <td class="tg-0lax">h</td> 
+            <td class="tg-0lax">i</td> 
+            <td class="tg-0lax">j</td> 
+            <td class="tg-0lax">k</td> 
+            <td class="tg-0lax">l</td> 
+            <td class="tg-0lax">m</td> 
+            <td class="tg-0lax">n</td> 
+            <td class="tg-0lax">o</td> 
+            <td class="tg-0lax">p</td> 
+            <td class="tg-0lax">q</td> 
+            <td class="tg-0lax">r</td> 
+            <td class="tg-0lax">s</td> 
+            <td class="tg-0lax">t</td> 
+            <td class="tg-0lax">u</td> 
+            <td class="tg-0lax">v</td> 
+            <td class="tg-0lax">w</td> 
+            <td class="tg-0lax">x</td>
+          </tr> 
+          <tr> 
+            <th class="tg-0lax">Chance of Rain:</th>
+            <td class="tg-0lax">a</td> 
+            <td class="tg-0lax">b</td> 
+            <td class="tg-0lax">c</td> 
+            <td class="tg-0lax">d</td> 
+            <td class="tg-0lax">e</td> 
+            <td class="tg-0lax">f</td> 
+            <td class="tg-0lax">g</td> 
+            <td class="tg-0lax">h</td> 
+            <td class="tg-0lax">i</td> 
+            <td class="tg-0lax">j</td> 
+            <td class="tg-0lax">k</td> 
+            <td class="tg-0lax">l</td> 
+            <td class="tg-0lax">m</td> 
+            <td class="tg-0lax">n</td> 
+            <td class="tg-0lax">o</td> 
+            <td class="tg-0lax">p</td> 
+            <td class="tg-0lax">q</td> 
+            <td class="tg-0lax">r</td> 
+            <td class="tg-0lax">s</td> 
+            <td class="tg-0lax">t</td> 
+            <td class="tg-0lax">u</td> 
+            <td class="tg-0lax">v</td> 
+            <td class="tg-0lax">w</td> 
+            <td class="tg-0lax">x</td>
+          </tr> 
+          <tr> 
+            <th class="tg-0lax">Humidity:</th>
+            <td class="tg-0lax">a</td> 
+            <td class="tg-0lax">b</td> 
+            <td class="tg-0lax">c</td> 
+            <td class="tg-0lax">d</td> 
+            <td class="tg-0lax">e</td> 
+            <td class="tg-0lax">f</td> 
+            <td class="tg-0lax">g</td> 
+            <td class="tg-0lax">h</td> 
+            <td class="tg-0lax">i</td> 
+            <td class="tg-0lax">j</td> 
+            <td class="tg-0lax">k</td> 
+            <td class="tg-0lax">l</td> 
+            <td class="tg-0lax">m</td> 
+            <td class="tg-0lax">n</td> 
+            <td class="tg-0lax">o</td> 
+            <td class="tg-0lax">p</td> 
+            <td class="tg-0lax">q</td> 
+            <td class="tg-0lax">r</td> 
+            <td class="tg-0lax">s</td> 
+            <td class="tg-0lax">t</td> 
+            <td class="tg-0lax">u</td> 
+            <td class="tg-0lax">v</td> 
+            <td class="tg-0lax">w</td> 
+            <td class="tg-0lax">x</td>
+          </tr> 
+        </tbody> 
+      </table> 
+    </div> 
+</div>
+  <div class="column is-12 has-text-centered">
+    <p class="is-size-3">
+      The following 6 days.
+    </p>
+  </div>
+  <!---->
+  <div class="column is-2">
+    <section class="card six-day-card">
+      <header class="card-header">
+        <p class="card-header-title is-size-4 is-centered">Tuesday</p>
+      </header>
+      <article class="card-content px-1">
+        <div class="has-text-centered">
+          <p class="is-size-6 mb-2 is-centered">Mostly Dry with sunndy spells</p>
+        </div>
+        
+        <p class="is-size-7">Temp: <span class="is-pulled-right">H 20°C / L
+            15°C</span></p>
+        <p class="is-size-7">Humidity: <span class="is-pulled-right">78%</span>
+        </p>
+        <p class="is-size-7">Wind: <span class="is-pulled-right">12km/h</span></p>
+        <p class="is-size-7">Sunrise: <span class="is-pulled-right">06:54</span></p>
+        <p class="is-size-7">Sunset: <span class="is-pulled-right">21:34</span></p>
+      </article>
+      <footer class="card-footer">
+      </footer>
+    </section>
+  </div>
+  <div class="column is-2">
+    <section class="card six-day-card">
+      <header class="card-header">
+        <p class="card-header-title is-size-4 is-centered">Wednesday</p>
+      </header>
+      <article class="card-content px-1">
+        <div class="has-text-centered">
+          <p class="is-size-6 mb-2 is-centered">Mostly Dry with sunndy spells</p>
+        </div>
+        
+        <p class="is-size-7">Temp: <span class="is-pulled-right">H 20°C / L
+            15°C</span></p>
+        <p class="is-size-7">Humidity: <span class="is-pulled-right">78%</span>
+        </p>
+        <p class="is-size-7">Wind: <span class="is-pulled-right">12km/h</span></p>
+        <p class="is-size-7">Sunrise: <span class="is-pulled-right">06:54</span></p>
+        <p class="is-size-7">Sunset: <span class="is-pulled-right">21:34</span></p>
+      </article>
+      <footer class="card-footer">
+      </footer>
+    </section>
+  </div>
+  <div class="column is-2">
+    <section class="card six-day-card">
+      <header class="card-header">
+        <p class="card-header-title is-size-4 is-centered">Thursday</p>
+      </header>
+      <article class="card-content px-1">
+        <div class="has-text-centered">
+          <p class="is-size-6 mb-2 is-centered">Mostly Dry with sunndy spells</p>
+        </div>
+        
+        <p class="is-size-7">Temp: <span class="is-pulled-right">H 20°C / L
+            15°C</span></p>
+        <p class="is-size-7">Humidity: <span class="is-pulled-right">78%</span>
+        </p>
+        <p class="is-size-7">Wind: <span class="is-pulled-right">12km/h</span></p>
+        <p class="is-size-7">Sunrise: <span class="is-pulled-right">06:54</span></p>
+        <p class="is-size-7">Sunset: <span class="is-pulled-right">21:34</span></p>
+      </article>
+      <footer class="card-footer">
+      </footer>
+    </section>
+  </div>
+  <div class="column is-2">
+    <section class="card six-day-card">
+      <header class="card-header">
+        <p class="card-header-title is-size-4 is-centered">Friday</p>
+      </header>
+      <article class="card-content px-1">
+        <div class="has-text-centered">
+          <p class="is-size-6 mb-2 is-centered">Mostly Dry with sunndy spells</p>
+        </div>
+        
+        <p class="is-size-7">Temp: <span class="is-pulled-right">H 20°C / L
+            15°C</span></p>
+        <p class="is-size-7">Humidity: <span class="is-pulled-right">78%</span>
+        </p>
+        <p class="is-size-7">Wind: <span class="is-pulled-right">12km/h</span></p>
+        <p class="is-size-7">Sunrise: <span class="is-pulled-right">06:54</span></p>
+        <p class="is-size-7">Sunset: <span class="is-pulled-right">21:34</span></p>
+      </article>
+      <footer class="card-footer">
+      </footer>
+    </section>
+  </div>
+  <div class="column is-2">
+    <section class="card six-day-card">
+      <header class="card-header">
+        <p class="card-header-title is-size-4 is-centered">Saturday</p>
+      </header>
+      <article class="card-content px-1">
+        <div class="has-text-centered">
+          <p class="is-size-6 mb-2 is-centered">Mostly Dry with sunndy spells</p>
+        </div>
+        
+        <p class="is-size-7">Temp: <span class="is-pulled-right">H 20°C / L
+            15°C</span></p>
+        <p class="is-size-7">Humidity: <span class="is-pulled-right">78%</span>
+        </p>
+        <p class="is-size-7">Wind: <span class="is-pulled-right">12km/h</span></p>
+        <p class="is-size-7">Sunrise: <span class="is-pulled-right">06:54</span></p>
+        <p class="is-size-7">Sunset: <span class="is-pulled-right">21:34</span></p>
+      </article>
+      <footer class="card-footer">
+      </footer>
+    </section>
+  </div>
+  <div class="column is-2">
+    <section class="card six-day-card">
+      <header class="card-header">
+        <p class="card-header-title is-size-4 is-centered">Sunday</p>
+      </header>
+      <article class="card-content px-1">
+        <div class="has-text-centered">
+          <p class="is-size-6 mb-2 is-centered">Mostly Dry with sunndy spells</p>
+        </div>
+        
+        <p class="is-size-7">Temp: <span class="is-pulled-right">H 20°C / L
+            15°C</span></p>
+        <p class="is-size-7">Humidity: <span class="is-pulled-right">78%</span>
+        </p>
+        <p class="is-size-7">Wind: <span class="is-pulled-right">12km/h</span></p>
+        <p class="is-size-7">Sunrise: <span class="is-pulled-right">06:54</span></p>
+        <p class="is-size-7">Sunset: <span class="is-pulled-right">21:34</span></p>
+      </article>
+      <footer class="card-footer">
+      </footer>
+    </section>
+  </div>
+</main>
+        <footer>
+    <div class="footer-container">
+        <a href="https://www.instagram.com/">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.tiktok.com/en/">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://www.facebook.com/">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+    </div>
+</footer>
+    </body>
+</html>
