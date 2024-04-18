@@ -1,6 +1,32 @@
+function appendCity(cityFromId) {
+  // create URL inside the function to ensure it starts at the base url every time
+  const myURL = new URL("http://localhost:8080/");
+  // add city to param
+  myURL.searchParams.append("city", cityFromId);
+
+  console.log("click worked");
+
+  // navigate to the new URL
+  window.location.replace(myURL);
+}
+
 // set time frames
 const daily = "_daily";
 const hourly = "_hourly";
+
+// set days of the week
+// https://www.w3schools.com/jsref/jsref_getday.asp
+const daysOfWeek = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+const d = new Date();
+// let day = daysOfWeek[d.getDay()];
 
 /*
     An array containing an object for each of the cities the site has access to data including:
@@ -9,6 +35,7 @@ const hourly = "_hourly";
     - Index to the cities daily data
     - Index to the cities hourly data
 */
+
 const cities = [
   { city: "amsterdam", title: "Amsterdam", _daily: 0, _hourly: 1 },
   { city: "berlin", title: "Berlin", _daily: 2, _hourly: 3 },
@@ -21,62 +48,30 @@ const cities = [
   { city: "waterford", title: "Waterford", _daily: 16, _hourly: 17 },
 ];
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    for(let i = 0; i < cities.length; i++){
+  // temporary measure to only run certain funcions on certain pages
+  const path = window.location.pathname;
 
-    
+  // set the base index of days as today/0
+  let day = 0;
 
-        // identify the card for the city being populated
-        const cityCard = document.getElementById(cities[i].city);
-        /*
-            Set the content for the Index page
-            Index page to have constant cities
-            Set each city
-        */
+  // stores the city page user is on, if they are one one
+  const currentCity = cities.find((city) =>
+    path.includes(`/city_${city.city}/`)
+  );
+
+  if (path === "/") {
+    // call function to populate cities on home page
+    const indexPage = document.querySelector("#index");
+
+    // today is index 0
     
-        // declare fields
-        const cityName = cityCard.querySelector(".city-name");
-        const weatherCode = cityCard.querySelector(".weather-code");
-        const dailyHighTemp = cityCard.querySelector(".daily-high-temp");
-        const dailyLowTemp = cityCard.querySelector(".daily-low-temp");
-        const dailyRainChance = cityCard.querySelector(".daily-rain-chance");
-        const dailyWindSpeedMax = cityCard.querySelector(".daily-wind-speed-max");
-        const dailySunrise = cityCard.querySelector(".daily-sunrise");
-        const dailySunset = cityCard.querySelector(".daily-sunset");
-    
-        console.log(cities[i].city)
-        // set city name
-        cityName.innerHTML = cities[i].title;
-    
-        // look up weather code
-        const weatherCodeFromData = weatherData[`${cities[i].city + daily}`].daily.weather_code[0];
-        const weatherDescription = weatherCodes[weatherCodeFromData];
-        
-    
-        weatherCode.innerHTML = weatherDescription;
-    
-        // set dailyHighTemp
-        dailyHighTemp.innerHTML = Math.round(weatherData[`${cities[i].city + daily}`].daily.temperature_2m_max[0]);
-    
-        // set dailyLowTemp
-        dailyLowTemp.innerHTML = Math.round(weatherData[`${cities[i].city + daily}`].daily.temperature_2m_min[0]);
-    
-        // set dailRainChance
-        dailyRainChance.innerHTML = weatherData[`${cities[i].city + daily}`].daily.precipitation_probability_max[0] + "%";
-    
-        // set dailyWindSpeedMax
-        dailyWindSpeedMax.innerHTML = weatherData[`${cities[i].city + daily}`].daily.wind_speed_10m_max[0] + "km/h";
-    
-        // set dailySunrise
-        dailySunrise.innerHTML = weatherData[`${cities[i].city + daily}`].daily.sunrise[0].slice(-5);
-    
-        // set dailySunset
-        dailySunset.innerHTML = weatherData[`${cities[i].city + daily}`].daily.sunset[0].slice(-5);
-    
-    }
+    cities.forEach(
+      (city, index) => (indexPage.innerHTML += createCityDailyCards(city, day))
+    );
+  } else if (path === `/city_${currentCity.city}/`) {
+    const cityPage = document.querySelector("#cityPage");
+    cityPage.innerHTML += createTodaysCityDailyCards(currentCity, day)
+  }
 });
-
