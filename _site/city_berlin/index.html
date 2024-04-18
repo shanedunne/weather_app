@@ -16,6 +16,7 @@
         <script type="text/javascript" src="/js/weather_display.js" ></script>
         <script type="text/javascript" src="/js/components/city_daily_cards.js" ></script>
         <script type="text/javascript" src="/js/components/todays_city_daily_card.js"></script>
+        <script type="text/javascript" src="/js/components/city_other_day_cards.js"></script>
     </head>
     <body>
         <header>
@@ -45,8 +46,18 @@
         </div>
     </nav>
 </header>
-        <main id="cityPage" class="columns is-multiline box has-background-white">
-  
+        <main class="columns is-multiline box has-background-white">
+  <div id="cityPageToday" class="column is-12">
+
+  </div>
+  <div class="column is-12">
+    <p class="is-size-3 has-text-centered">
+      The following 6 days.
+    </p>
+    <div id="cityPageFollowingDays" class="column is-12 columns is-multiline has-background-white">
+
+    </div>
+  </div>
 </main>
         <footer>
     <div class="footer-container">

@@ -26,7 +26,7 @@ const daysOfWeek = [
   "Saturday",
 ];
 const d = new Date();
-// let day = daysOfWeek[d.getDay()];
+let today = d.getDay();
 
 /*
     An array containing an object for each of the cities the site has access to data including:
@@ -71,7 +71,18 @@ document.addEventListener("DOMContentLoaded", () => {
       (city, index) => (indexPage.innerHTML += createCityDailyCards(city, day))
     );
   } else if (path === `/city_${currentCity.city}/`) {
-    const cityPage = document.querySelector("#cityPage");
-    cityPage.innerHTML += createTodaysCityDailyCards(currentCity, day)
+    const cityPageToday = document.querySelector("#cityPageToday");
+    cityPageToday.innerHTML += createTodaysCityDailyCards(currentCity, day);
+
+    // get the div for holding the following 6 days of weather
+    const cityPageFollowingDays = document.querySelector("#cityPageFollowingDays");
+
+    // let i = 1 as we are looking for tomorrows weather onwards
+    for(let i = 1; i < 7; i++){
+
+      let dayIndex = (today + i) % 7;
+      let dayName = daysOfWeek[dayIndex];
+      cityPageFollowingDays.innerHTML += createCityOtherDayCards(currentCity, dayName, i);
+    }
   }
 });
