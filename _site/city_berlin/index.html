@@ -17,6 +17,8 @@
         <script type="text/javascript" src="/js/components/city_daily_cards.js" ></script>
         <script type="text/javascript" src="/js/components/todays_city_daily_card.js"></script>
         <script type="text/javascript" src="/js/components/city_other_day_cards.js"></script>
+        <script type="text/javascript" src="/js/components/hourly_table.js"></script>
+
     </head>
     <body>
         <header>
@@ -50,6 +52,18 @@
   <div id="cityPageToday" class="column is-12">
 
   </div>
+  <div class="column is-10 is-offset-1 ml-4 mr-4 has-text-centered"> 
+    <p class="is-size-3 has-text-centered">
+      Today's hourly breakdown
+    </p>
+    <div class="table-container">
+      
+      <table class="table has-text-centered"> 
+        <tbody id="hourlyTable">
+        </tbody> 
+      </table> 
+    </div> 
+</div>
   <div class="column is-12">
     <p class="is-size-3 has-text-centered">
       The following 6 days.

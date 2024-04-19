@@ -74,6 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const cityPageToday = document.querySelector("#cityPageToday");
     cityPageToday.innerHTML += createTodaysCityDailyCards(currentCity, day);
 
+    // add hourly time data
+    const hourlyWeatherTable = document.querySelector("#hourlyTable");
+    hourlyWeatherTable.innerHTML = createHourlyTable(currentCity, day);
+
     // get the div for holding the following 6 days of weather
     const cityPageFollowingDays = document.querySelector("#cityPageFollowingDays");
 
