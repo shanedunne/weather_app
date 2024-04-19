@@ -2,39 +2,3 @@
     border-radius: var(--bulma-card-radius, .25rem);
 
 }
-.force-block {
-    display: block;
-}
-.table {
-    border: 0.5px solid black;
-}
-
-.hourly-table-time {
-    border: 1px solid black;
-}
-
-.table-container .table td {
-    text-align: center;
-    border-right: 0.5px solid black;
-    
-}
-
-.table-container .table th {
-   position: sticky;
-   left: 0;
-   overflow: hidden;
-   z-index: 10;
-   background-color: #DEE2E6;
-   border: 0.5px solid black;
-}
-
-
-.six-day-card:hover {
-    transition: 200ms;
-    background-color: #E9ECEF;
-}
-
-.table-container .table .time {
-    background-color: #E9ECEF;
-    border: 0.5px solid black;
-}

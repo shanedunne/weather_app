@@ -121,5 +121,6 @@ function createHourlyTable(city, day) {
   // add windSpeedRow to the rows array
   rows.push(windSpeedRow);
 
+  // returns rows
   return rows.join("");
 }

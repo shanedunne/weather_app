@@ -1,4 +1,12 @@
-const cities = [
+/*
+    An array containing an object for each of the cities the site has access to data including:
+    - The city as referenced in the data set
+    - A string to be used as a title
+    - Index to the cities daily data
+    - Index to the cities hourly data
+*/
+
+const allCities = [
     { city: "amsterdam", title: "Amsterdam", _daily: 0, _hourly: 1 },
     { city: "berlin", title: "Berlin", _daily: 2, _hourly: 3 },
     { city: "copenhagen", title: "Copenhagen", _daily: 4, _hourly: 5 },

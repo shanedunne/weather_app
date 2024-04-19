@@ -1,0 +1,76 @@
+.navbar {
+    background-color: #264653 !important;
+}
+
+.navbar .navbar-menu a:hover {
+    background-color: #2a9d8f !important;
+}
+
+.navbar .navbar-menu a {
+    background-color: #264653 !important;
+    transition: 150ms;
+}
+
+.navbar .navbar-menu a {
+    color: white !important;
+}
+
+.navbar .navbar-brand a {
+    color: white;
+}
+
+#navbarBasicExample {
+    padding: 0;
+}
+.force-block {
+    display: block;
+}
+.table {
+    border: 0.5px solid black;
+}
+
+.hourly-table-time {
+    border: 1px solid black;
+}
+
+.table-container .table td {
+    text-align: center;
+    border-right: 0.5px solid black;
+    
+}
+
+.table-container .table th {
+   position: sticky;
+   left: 0;
+   overflow: hidden;
+   z-index: 10;
+   background-color: #264653;
+   border: 0.5px solid black;
+   color: white;
+}
+
+
+
+
+.table-container .table .time {
+    background-color: #2a9d8f;
+    color: white;
+    border: 0.5px solid black;
+}
+
+.card .card-header{
+    background-color: #264653;
+    
+}
+.card .card-header-title {
+    color: white;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .card-header {
+    transition: 200ms;
+    background-color: #F4A261;
+}

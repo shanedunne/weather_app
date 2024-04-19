@@ -28,28 +28,7 @@ const daysOfWeek = [
 const d = new Date();
 let today = d.getDay();
 
-/*
-    An array containing an object for each of the cities the site has access to data including:
-    - The city as referenced in the data set
-    - A string to be used as a title
-    - Index to the cities daily data
-    - Index to the cities hourly data
-*/
-
-const cities = [
-  { city: "amsterdam", title: "Amsterdam", _daily: 0, _hourly: 1 },
-  { city: "berlin", title: "Berlin", _daily: 2, _hourly: 3 },
-  { city: "copenhagen", title: "Copenhagen", _daily: 4, _hourly: 5 },
-  { city: "cork", title: "Cork", _daily: 6, _hourly: 7 },
-  { city: "new_york", title: "New York", _daily: 8, _hourly: 9 },
-  { city: "paris", title: "Paris", _daily: 10, _hourly: 11 },
-  { city: "san_francisco", title: "San Francisco", _daily: 12, _hourly: 13 },
-  { city: "tromso", title: "Tromso", _daily: 14, _hourly: 15 },
-  { city: "waterford", title: "Waterford", _daily: 16, _hourly: 17 },
-];
-
 document.addEventListener("DOMContentLoaded", () => {
-
   // temporary measure to only run certain funcions on certain pages
   const path = window.location.pathname;
 
@@ -57,36 +36,68 @@ document.addEventListener("DOMContentLoaded", () => {
   let day = 0;
 
   // stores the city page user is on, if they are one one
-  const currentCity = cities.find((city) =>
+  const currentCity = allCities.find((city) =>
     path.includes(`/city_${city.city}/`)
   );
 
+  // handle index page
   if (path === "/") {
-    // call function to populate cities on home page
+    // identify element on index page to insert content
     const indexPage = document.querySelector("#index");
 
-    // today is index 0
-    
-    cities.forEach(
+    // create a card for each city on the index page and insert to html
+    allCities.forEach(
       (city, index) => (indexPage.innerHTML += createCityDailyCards(city, day))
     );
   } else if (path === `/city_${currentCity.city}/`) {
+    // handle city focus page
+
+    // TODAYS WEATHER SUMMARY
+    // identify element on city focus page for todays weather summary
     const cityPageToday = document.querySelector("#cityPageToday");
+
+    // create a card for the cities weather summary of today and insert to html
     cityPageToday.innerHTML += createTodaysCityDailyCards(currentCity, day);
 
-    // add hourly time data
+    // TODAYS HOURLY WEATHER
+    // identify element on city focus page for todays hourly weather summary
     const hourlyWeatherTable = document.querySelector("#hourlyTable");
+
+    // call function to create rows for the hourly table and insert into the html
     hourlyWeatherTable.innerHTML = createHourlyTable(currentCity, day);
 
-    // get the div for holding the following 6 days of weather
-    const cityPageFollowingDays = document.querySelector("#cityPageFollowingDays");
+    // REST OF WEEK
+    // identify element on city focus page for showing the rest of the weeks weather
+    const cityPageFollowingDays = document.querySelector(
+      "#cityPageFollowingDays"
+    );
 
+    // iterate through the weatherData to produce weather cards for the rest of the week
     // let i = 1 as we are looking for tomorrows weather onwards
-    for(let i = 1; i < 7; i++){
-
+    for (let i = 1; i < 7; i++) {
       let dayIndex = (today + i) % 7;
       let dayName = daysOfWeek[dayIndex];
-      cityPageFollowingDays.innerHTML += createCityOtherDayCards(currentCity, dayName, i);
+      cityPageFollowingDays.innerHTML += createCityOtherDayCards(
+        currentCity,
+        dayName,
+        i
+      );
     }
   }
 });
+
+function getHourlyData(cardId) {
+  // split the id to recover the parameters needed to call the createHourlyTable function
+  const [city, selectedDay] = cardId.split("_");
+
+  // ensure the day index is greater than 0 i.e. not today as we already have this hourly data on the page
+  if (selectedDay > 0) {
+    // identify element on city focus page for todays hourly weather summary
+    const otherDayHourlyData = document.querySelector(
+      "#otherDayHourlyData"
+    );
+
+    // call function to create rows for the hourly table and insert into the html
+    otherDayHourlyData.innerHTML = createHourlyTable(city, selectedDay);
+  }
+}

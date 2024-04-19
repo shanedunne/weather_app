@@ -1,7 +1,7 @@
 const createCityOtherDayCards = (city, dayName, dayDataIndex) => {
     return `
   </div>
-    <div id=${city.city} class="column is-2">
+    <div id="${city.city}_${dayDataIndex}" class="column is-2" onclick="getHourlyData(this.id)">
     <section class="card">
         <header class="card-header">
             <p class="card-header-title is-size-4 is-centered city-name">${dayName}</p>
