@@ -2,7 +2,7 @@ const createCityDailyCards = (city, day) => {
     return `
   </div>
     <div id=${city.city} class="column is-3">
-    <section class="card">
+    <section class="card daily-card-can-click">
         <header class="card-header">
             <p class="card-header-title is-size-4 is-centered city-name">${city.title}</p>
         </header>

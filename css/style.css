@@ -66,11 +66,15 @@
     color: white;
 }
 
-.card:hover {
+.daily-card:hover {
     cursor: pointer;
 }
 
-.card:hover .card-header {
+.daily-card-can-click:hover .card-header {
     transition: 200ms;
+    background-color: #F4A261;
+}
+
+.card .card-header-active {
     background-color: #F4A261;
 }
