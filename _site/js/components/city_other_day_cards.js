@@ -1,7 +1,7 @@
 const createCityOtherDayCards = (city, dayName, dayDataIndex) => {
     return `
   </div>
-    <div id="${city.city}_${dayDataIndex}" class="column is-2" onclick="getHourlyData(this.id)">
+    <div id="${city.city}-${dayDataIndex}" class="column is-2" onclick="getHourlyData(this.id)">
     <section class="card daily-card-can-click">
         <header class="card-header">
             <p class="card-header-title is-size-4 is-centered city-name">${dayName}</p>

@@ -66,7 +66,7 @@
     color: white;
 }
 
-.daily-card:hover {
+.daily-card-can-click:hover {
     cursor: pointer;
 }
 

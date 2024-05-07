@@ -1,0 +1,9 @@
+.sunset-icon {
+    color: red;
+	width: 30px;
+	height: 30px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: inline-block;
+	background-image: url("../icons/sunset.ico");
+}

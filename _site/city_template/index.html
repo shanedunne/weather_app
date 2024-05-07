@@ -6,8 +6,11 @@
         <title>Whether Weather</title>
         <link rel="stylesheet" href="/css/bulma.css">
         <link rel="stylesheet" href="/css/style.css">
-        <!--Source for Bulma theme: https://jenil.github.io/bulmaswatch/cerulean/ -->
+        <!--Source for Bulma theme: https://jenil.github.io/bulmaswatch/cerulean/ 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+        -->
         <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css">
+        
         <script src="https://kit.fontawesome.com/ab94d40537.js" crossorigin="anonymous"></script>
         <script type="text/javascript" src="js/bulma.js"></script>
         <script type="text/javascript" src="/js/data/weather_data.js"></script>
@@ -23,11 +26,10 @@
     </head>
     <body>
         <header>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar pr-3" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
                 data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -37,11 +39,11 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-end">
-                <a class="navbar-item"> Home </a>
+                <a href="/" class="navbar-item"> Home </a>
 
-                <a class="navbar-item"> Favourite Cities </a>
+                <a href="/favourite_cities/" class="navbar-item"> Favourite Cities </a>
 
-                <a class="navbar-item"> Preferences </a>
+                <a href="/preferences/" class="navbar-item"> Preferences </a>
             </div>
         </div>
     </nav>

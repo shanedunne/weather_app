@@ -1,6 +1,6 @@
 function getHourlyData(cardId) {
     // split the id to recover the parameters needed to call the createHourlyTable function
-    const [currentCity, selectedDay] = cardId.split("_");
+    const [currentCity, selectedDay] = cardId.split("-");
   
     // ensure the day index is greater than 0 i.e. not today as we already have this hourly data on the page
     if (selectedDay > 0) {
