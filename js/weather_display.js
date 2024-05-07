@@ -17,8 +17,6 @@ const d = new Date();
 let today = d.getDay();
 
 //PREFERENCES
-// array to handle checked cities
-let favouriteCities = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   // temporary measure to only run certain funcions on certain pages
@@ -27,6 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const currentCityParam = urlParams.get("city");
   const currentCity = allCities.find((city) => city.city === currentCityParam);
+
+  // local storage
+  let favouriteCities = JSON.parse(localStorage.getItem('favouriteCities')) || [];
+
+  let storedCities = localStorage.getItem("favouriteCities");
+  let storedCitiesParsed = JSON.parse(storedCities);
 
   // set the base index of days as today/0
   let day = 0;
@@ -53,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // sets all checkboxes that exist in localStorage to checked
     favouriteCityCheckbox.forEach((checkbox) => {
-      if (favouriteCities.includes(checkbox.value)) {
+      if (storedCitiesParsed.includes(checkbox.value)) {
         checkbox.checked = true;
       }
     });
@@ -72,24 +76,22 @@ document.addEventListener("DOMContentLoaded", () => {
             (city) => city !== event.target.value
           );
         }
-        // save to local storage
-        localStorage.setItem(
-          "favouriteCities",
-          JSON.stringify(favouriteCities)
-        ); // Store updated array in localStorage
+        // stringify favouriteCities array
+        const stringifiedCities = JSON.stringify(favouriteCities);
+
+        // Store updated array in localStorage
+        localStorage.setItem("favouriteCities", stringifiedCities); 
+        
         console.log("Favourite Cities:", favouriteCities);
       });
     });
   } else if (path === "/favourite_cities/") {
     console.log(favouriteCities);
 
-
     // identify element on favourite cities page to insert content
     const favouriteCitiesContainer = document.querySelector("#favoutiteCities");
 
-    let storedCities = localStorage.getItem("favouriteCities");
-      let storedCitiesParsed = JSON.parse(storedCities);
-      console.log('store names'+ storedCitiesParsed)
+    console.log("store names" + storedCitiesParsed);
 
     // if no favourite cities have been selected i.e. favourite cities array is empty, render element declaring this
     if (storedCitiesParsed.length === 0) {
@@ -107,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       // if some favourite cities selected, iterate through array
       // first, get names from local storag
-      
+
       storedCitiesParsed.forEach((favouriteCity, index) => {
         // get favourite city object from all_cities
         let favouriteCityObject = allCities.find(
