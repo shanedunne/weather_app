@@ -83,11 +83,16 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (path === "/favourite_cities/") {
     console.log(favouriteCities);
 
+
     // identify element on favourite cities page to insert content
     const favouriteCitiesContainer = document.querySelector("#favoutiteCities");
 
+    let storedCities = localStorage.getItem("favouriteCities");
+      let storedCitiesParsed = JSON.parse(storedCities);
+      console.log('store names'+ storedCitiesParsed)
+
     // if no favourite cities have been selected i.e. favourite cities array is empty, render element declaring this
-    if (favouriteCities.length === 0) {
+    if (storedCitiesParsed.length === 0) {
       let element = `
         <div class="column is-12 has-text-centered">
         <p class="is-size-3">
@@ -101,7 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
       favouriteCitiesContainer.innerHTML += element;
     } else {
       // if some favourite cities selected, iterate through array
-      favouriteCities.forEach((favouriteCity, index) => {
+      // first, get names from local storag
+      
+      storedCitiesParsed.forEach((favouriteCity, index) => {
         // get favourite city object from all_cities
         let favouriteCityObject = allCities.find(
           (city) => city.city === favouriteCity
