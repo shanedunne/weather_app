@@ -1,3 +1,7 @@
+/*
+  This function looks after producing hourly weather tables for days other than today in the city focus page
+*/
+
 function getHourlyData(cardId) {
     // split the id to recover the parameters needed to call the createHourlyTable function
     const [currentCity, selectedDay] = cardId.split("-");
