@@ -88,3 +88,9 @@ body {
 .card .card-header-active {
     background-color: #F4A261;
 }
+
+.table-container .table .highlighted-hour {
+    background-color: #F4A261;
+    color: white;
+    border: 0.5px solid black;
+}
