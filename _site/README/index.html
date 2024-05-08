@@ -1,1 +1,60 @@
-<p>https://www.freecodecamp.org/news/how-to-store-objects-or-arrays-in-browser-local-storage/</p>
+<h1>Whether Weather</h1>
+<p>Whether Weather is a website designed to provide weather information for designated cities</p>
+<h2>Deployment</h2>
+<p>The website has been deployed here: <a href="https://whetherweatherapp.netlify.app/">Whether Weather</a></p>
+<h2>Features</h2>
+<ul>
+<li><strong>Daily Weather Summaries</strong>: Provides a daily weather summary for each city the site has access to</li>
+<li><strong>Hourly Weather Breakdowns</strong>: Provides hourly weather breakdowns for each city on the city focus page</li>
+<li><strong>Preferences</strong>: Allows the user to chose their weather preferences and favourite cities.</li>
+<li></li>
+</ul>
+<h2>Pages</h2>
+<h3>Index / Home</h3>
+<p>Home page displaying cards for each of the cities, representing their weather summary of the day. Each card is clickable, and will bring the user to the City Focus page of the clicked city</p>
+<h3>City Focus</h3>
+<p>This page provides information for a specific cities weather.</p>
+<ul>
+<li>Initially, a summary card of todays weather is seen for quick information.</li>
+<li>A table displaying the hourly weather breakdown for today is then seen.</li>
+<li>The next section contains cards, summarising the next 6 days of weather in the specific city. These cards are clicked</li>
+<li>When one of the following 6 day cards are clicked, a hourly breakdown table of that day will appear.</li>
+</ul>
+<h3>Preferences</h3>
+<p>This page contains two boxes where the user can customise their experience on the site.</p>
+<ul>
+<li>Favourite Cities</li>
+<li>
+<ul>
+<li>Users can chose their favourite cities, which will be displayed on the favourite cities page. This information is stored in local storage</li>
+</ul>
+</li>
+<li>Hourly Weather Preferences</li>
+<li>
+<ul>
+<li>Users can choose which data points they want to see displayed on the hourly breakdown tables. This information is stored in local storage</li>
+</ul>
+</li>
+</ul>
+<h3>Favourite Cities</h3>
+<p>This page shows summary cards of todays weather of only the chosen cities in the preferences page. If no favourite cities have been selected, the page will display a message stating this, directing users to the preference page if they would like to avail of this feature.</p>
+<h2>Design</h2>
+<h3>Intention</h3>
+<p>The design intention was to create a well laid out and simple website to allow for easy navigation. I wanted the user to be able to easily find the information they require, especially when it came to the hourly weather table, as there is a lot of data points in the one space.</p>
+<h3>Colours Used</h3>
+<p><img src="./images/colour-palette.png" alt="Palette"></p>
+<h2>Technologies used</h2>
+<ul>
+<li>[Javascript] (https://en.wikipedia.org/wiki/JavaScript) for handling and rendering data and components</li>
+<li><a href="https://html.com/html5/">HTML5</a> as the main language to produce the pages</li>
+<li><a href="https://en.wikipedia.org/wiki/CSS">CSS3</a> to style web elements</li>
+<li><a href="https://www.11ty.dev/">Eleventy</a> as a static site generator</li>
+<li><a href="https://v0-7-1.11ty.dev/docs/languages/nunjucks/">Nunjucks</a> as the sites templating engine to produce templates of the HTML elements</li>
+<li><a href="https://netlify.com/">Netlify</a> - for site deployment</li>
+</ul>
+<h2>Learning resources</h2>
+<ul>
+<li><a href="https://www.11ty.dev/docs/languages/nunjucks/">Nunjucks</a> - Docs to understand correct templating techniques</li>
+<li><a href="https://www.11ty.dev/docs/">11ty</a> - to navigate 11ty installation and procedures</li>
+<li><a href="https://www.freecodecamp.org/">FreeCodeCamp</a> - Tutorials on local storage etc.</li>
+</ul>
