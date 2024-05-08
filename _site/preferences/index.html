@@ -11,18 +11,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
         -->
         <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css">
-        
-        <script src="https://kit.fontawesome.com/ab94d40537.js" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="js/bulma.js"></script>
-        <script type="text/javascript" src="/js/data/weather_data.js"></script>
-        <script type="text/javascript" src="/js//data/weather_codes.js"></script>
-        <script type="text/javascript" src="/js//data/all_cities.js"></script>
-        <script type="text/javascript" src="/js/weather_display.js" ></script>
-        <script type="text/javascript" src="/js/components/city_daily_cards.js" ></script>
-        <script type="text/javascript" src="/js/components/todays_city_daily_card.js"></script>
-        <script type="text/javascript" src="/js/components/city_other_day_cards.js"></script>
-        <script type="text/javascript" src="/js/components/hourly_table.js"></script>
-        <script type="text/javascript" src="/js/other_day_hourly_data.js"></script>
 
     </head>
     <body>
@@ -33,7 +21,7 @@
                 <img src="/images/logo-color.png" width="102" height="44"/>
               </a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                data-target="navbarBasicExample">
+                data-target="navMenu">
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
                 <span aria-hidden="true"></span>
@@ -41,7 +29,7 @@
         </div>
         
 
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navMenu" class="navbar-menu">
             <div class="navbar-end">
                 <a href="/" class="navbar-item"> Home </a>
 
@@ -69,53 +57,43 @@
     <article>
       <div class="field">
         <label class="checkbox">
-          <input type="checkbox" />
+          <input id="hourlyPreferencesCheckbox" type="checkbox" value="temperature"/>
           Temperature
-        </label>
-      </div>
-      <div class="control is-centered">
-        <label class="radio">
-          <input type="radio" name="answer" checked />
-          Celsius
-        </label>
-        <label class="radio">
-          <input type="radio" name="answer" />
-          Fahrenheit
         </label>
       </div>
       <div class="field">
         <label class="checkbox">
-          <input type="checkbox" />
+          <input id="hourlyPreferencesCheckbox" type="checkbox" value="feels_like"/>
           Feels Like
         </label>
       </div>
       <div class="field">
         <label class="checkbox">
-          <input type="checkbox" />
+          <input id="hourlyPreferencesCheckbox" type="checkbox" value="rain"/>
           Rain
         </label>
       </div>
       <div class="field">
         <label class="checkbox">
-          <input type="checkbox" />
+          <input id="hourlyPreferencesCheckbox" type="checkbox" value="chance_of_rain"/>
           Chance of Rain
         </label>
       </div>
       <div class="field">
         <label class="checkbox">
-          <input type="checkbox" />
+          <input id="hourlyPreferencesCheckbox" type="checkbox" value="humidity"/>
           Humidity
         </label>
       </div>
       <div class="field">
         <label class="checkbox">
-          <input type="checkbox" />
+          <input id="hourlyPreferencesCheckbox" type="checkbox" value="wind_speed"/>
           Wind Speed
         </label>
       </div>
       <div class="field">
         <label class="checkbox">
-          <input type="checkbox" />
+          <input id="hourlyPreferencesCheckbox" type="checkbox" value="wind_gust"/>
           Wind Gusts
         </label>
       </div>
@@ -126,7 +104,7 @@
     </footer>
   </section>
 </div>
-<div class="column is-4 is-offset-1">
+<div class="column is-4 is-offset-2">
   <section class="card has-text-centered">
     <header class="card-header">
       <p class="card-header-title is-size-4 is-centered">Select Favourite Cities</p>
@@ -192,7 +170,7 @@
   </section>
 </div>
 </main>
-        <footer>
+        <footer class="footer">
     <div class="footer-container">
         <a href="https://www.instagram.com/">
             <i class="fa-brands fa-instagram"></i>
@@ -208,5 +186,36 @@
         </a>
     </div>
 </footer>
+        <!-- Scripts -->
+        <script type="text/javascript" src="/js/weather_display.js"></script>
+    <script type="text/javascript" src="/js/data/weather_data.js"></script>
+    <script type="text/javascript" src="/js/data/weather_codes.js"></script>
+    <script type="text/javascript" src="/js/data/all_cities.js"></script>
+    <script type="text/javascript" src="/js/components/city_daily_cards.js"></script>
+    <script type="text/javascript" src="/js/components/todays_city_daily_card.js"></script>
+    <script type="text/javascript" src="/js/components/city_other_day_cards.js"></script>
+    <script type="text/javascript" src="/js/components/hourly_table.js"></script>
+    <script type="text/javascript" src="/js/other_day_hourly_data.js"></script>
+
+    <!-- Burger menu handler -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
+                // Get the target from the "data-target" attribute
+                const target = el.getAttribute('data-target');
+                const $target = document.getElementById(target);
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+            });
+        });
+    });
+    </script>
     </body>
 </html>

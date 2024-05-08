@@ -27,10 +27,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentCity = allCities.find((city) => city.city === currentCityParam);
 
   // local storage
+  // favourite cities set up
   let favouriteCities = JSON.parse(localStorage.getItem('favouriteCities')) || [];
 
   let storedCities = localStorage.getItem("favouriteCities");
   let storedCitiesParsed = JSON.parse(storedCities);
+
+  // preferences setup - set all checked as standard unless saved to localstorage differently
+  let preferenceData = JSON.parse(localStorage.getItem("preferenceData")) || [
+    "temperature",
+    "feels_like",
+    "rain",
+    "chance_of_rain",
+    "humidity",
+    "wind_speed",
+    "wind_gust",
+  ];
+
+  if (!localStorage.getItem("preferenceData")) {
+    localStorage.setItem("preferenceData", JSON.stringify(preferenceData));
+  }
+
+  let storedPreferences = localStorage.getItem("preferenceData");
+  let storedPreferencesParsed = JSON.parse(storedPreferences);
 
   // set the base index of days as today/0
   let day = 0;
@@ -51,17 +70,56 @@ document.addEventListener("DOMContentLoaded", () => {
       (city, index) => (indexPage.innerHTML += createCityDailyCards(city, day))
     );
   } else if (path === "/preferences/") {
+
+    // get all hourly preferences checkboxes
+    const hourlyPreferencesCheckbox = document.querySelectorAll("#hourlyPreferencesCheckbox");
+
+    // get all favourite ciy checkboxes
     const favouriteCityCheckbox = document.querySelectorAll(
       "#favoutiteCitiesCheckbox"
     );
 
+    // HOURLY PREFERENCES CHECKBOX
+    // sets all checkboxes that exist in localStorage to checked
+    hourlyPreferencesCheckbox.forEach((checkbox) => {
+      if (storedPreferencesParsed.includes(checkbox.value)) {
+        checkbox.checked = true;
+      }
+    });
+    
+    // loop through all of the preferences checkboxes and create an event listener
+    hourlyPreferencesCheckbox.forEach((checkbox) => {
+      checkbox.addEventListener("change", (event) => {
+        // if the change means a preference is checked, add it to the array once its not already there
+        if (event.target.checked) {
+          if (!preferenceData.includes(event.target.value)) {
+            preferenceData.push(event.target.value);
+          }
+        } else {
+          // if it was an uncheck, remove the city from the array backed on the value
+          preferenceData = preferenceData.filter(
+            (preference) => preference !== event.target.value
+          );
+        }
+        // stringify favouriteCities array
+        const stringifiedPreferences = JSON.stringify(preferenceData);
+
+        // Store updated array in localStorage
+        localStorage.setItem("preferenceData", stringifiedPreferences); 
+        
+        console.log("Preferences:", preferenceData);
+      });
+    });
+    
+
+    // FAVOURITE CITY CHECKBOXES
     // sets all checkboxes that exist in localStorage to checked
     favouriteCityCheckbox.forEach((checkbox) => {
       if (storedCitiesParsed.includes(checkbox.value)) {
         checkbox.checked = true;
       }
     });
-
+    
     // loop through all of the favourite city checkboxes and create an event listener
     favouriteCityCheckbox.forEach((checkbox) => {
       checkbox.addEventListener("change", (event) => {

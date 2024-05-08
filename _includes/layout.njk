@@ -11,23 +11,42 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
         -->
         <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css">
-        
-        <script src="https://kit.fontawesome.com/ab94d40537.js" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="js/bulma.js"></script>
-        <script type="text/javascript" src="/js/data/weather_data.js"></script>
-        <script type="text/javascript" src="/js//data/weather_codes.js"></script>
-        <script type="text/javascript" src="/js//data/all_cities.js"></script>
-        <script type="text/javascript" src="/js/weather_display.js" ></script>
-        <script type="text/javascript" src="/js/components/city_daily_cards.js" ></script>
-        <script type="text/javascript" src="/js/components/todays_city_daily_card.js"></script>
-        <script type="text/javascript" src="/js/components/city_other_day_cards.js"></script>
-        <script type="text/javascript" src="/js/components/hourly_table.js"></script>
-        <script type="text/javascript" src="/js/other_day_hourly_data.js"></script>
 
     </head>
     <body>
         {% include "nav.njk" %}
         {{ content | safe }}
         {% include "footer.njk" %}
+        <!-- Scripts -->
+        <script type="text/javascript" src="/js/weather_display.js"></script>
+    <script type="text/javascript" src="/js/data/weather_data.js"></script>
+    <script type="text/javascript" src="/js/data/weather_codes.js"></script>
+    <script type="text/javascript" src="/js/data/all_cities.js"></script>
+    <script type="text/javascript" src="/js/components/city_daily_cards.js"></script>
+    <script type="text/javascript" src="/js/components/todays_city_daily_card.js"></script>
+    <script type="text/javascript" src="/js/components/city_other_day_cards.js"></script>
+    <script type="text/javascript" src="/js/components/hourly_table.js"></script>
+    <script type="text/javascript" src="/js/other_day_hourly_data.js"></script>
+
+    <!-- Burger menu handler -->
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get all "navbar-burger" elements
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
+                // Get the target from the "data-target" attribute
+                const target = el.getAttribute('data-target');
+                const $target = document.getElementById(target);
+
+                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+            });
+        });
+    });
+    </script>
     </body>
 </html>
