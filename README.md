@@ -6,6 +6,9 @@ Whether Weather is a website designed to provide weather information for designa
 
 The website has been deployed here: [Whether Weather](https://whetherweatherapp.netlify.app/)
 
+## Repo
+The repo can be found here: [Github](https://github.com/shanedunne/weather_app)
+
 ## Features
 
 - **Daily Weather Summaries**: Provides a daily weather summary for each city the site has access to
@@ -39,6 +42,14 @@ This page shows summary cards of todays weather of only the chosen cities in the
 ### Intention
 The design intention was to create a well laid out and simple website to allow for easy navigation. I wanted the user to be able to easily find the information they require, especially when it came to the hourly weather table, as there is a lot of data points in the one space. 
 
+## Use Cases
+- A user can navigate to the site and view all available cities. If they are from Cork and are only interested in Cork weather, they can go to 'Preferences' and select Cork as a favourite city. Now, they can navigate to the Favourite City page and only see a summary card for Cork. This card is clickable and leads to the Cork city focus page.
+
+- A user may be travelling between Berlin and Amsterdam over the course of a few days and may want to track both cities. The user can select both as favourite cities and will only see them specifically in the Favourite Cities page.
+
+- If a user only cares about rain and temperature, they may want to go to the Preferences page and deselect all data points except 'temperature, rain, chance of rain'. This will minimise the data displayed when viewing the hourly breakdowns.
+
+
 ### Colours Used
 ![Palette](./images/colour-palette.png)
 
@@ -51,6 +62,8 @@ The design intention was to create a well laid out and simple website to allow f
 - [Eleventy](https://www.11ty.dev/) as a static site generator
 - [Nunjucks](https://v0-7-1.11ty.dev/docs/languages/nunjucks/) as the sites templating engine to produce templates of the HTML elements
 - [Netlify](https://netlify.com/) - for site deployment
+- [Bulma](https://bulma.io/) - CSS Framework
+- [BulmaSwatch](https://jenil.github.io/bulmaswatch/cerulean/) - Themes for Bulma
 
 ## Learning resources
  - [Nunjucks](https://www.11ty.dev/docs/languages/nunjucks/) - Docs to understand correct templating techniques
