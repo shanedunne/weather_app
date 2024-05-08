@@ -1,4 +1,4 @@
-function createHourlyTable(city, day) {
+function createHourlyTable(city, day, preferences) {
   // information on where to slice depending on the day
   const sliceLocation = [
     { day: "today", start: 0, end: 24 },
@@ -39,7 +39,10 @@ function createHourlyTable(city, day) {
     .join("")}</tr>`;
 
   // add tempRow to the rows array
-  rows.push(tempRow);
+  if(preferences.includes("temperature")) {
+    rows.push(tempRow);
+  }
+  
 
   // get data for feelsLikeRow for specified day
   const feelsLikeRowData = weatherData[
@@ -55,7 +58,10 @@ function createHourlyTable(city, day) {
     .join("")}</tr>`;
 
   // add feelsLikeRow to the rows array
-  rows.push(feelsLikeRow);
+  if(preferences.includes("feels_like")){
+    rows.push(feelsLikeRow);
+  }
+  
 
   // get data for rainRow for specified day
   const rainRowData = weatherData[
@@ -71,7 +77,9 @@ function createHourlyTable(city, day) {
     .join("")}</tr>`;
 
   // add rainRow to the rows array
-  rows.push(rainRow);
+  if(preferences.includes("rain")) {
+    rows.push(rainRow);
+  }
 
   // get data for rainChanceRow for specified day
   const rainChanceRowData = weatherData[
@@ -87,7 +95,9 @@ function createHourlyTable(city, day) {
     .join("")}</tr>`;
 
   // add rainChanceRow to the rows array
-  rows.push(rainChanceRow);
+  if(preferences.includes("chance_of_rain")){
+    rows.push(rainChanceRow);
+  }
 
   // get data for humidityRow for specified day
   const humidityRowData = weatherData[
@@ -103,7 +113,9 @@ function createHourlyTable(city, day) {
     .join("")}</tr>`;
 
   // add humidityRow to the rows array
-  rows.push(humidityRow);
+  if(preferences.includes("humidity")){
+    rows.push(humidityRow);
+  }
 
   // get data for windSpeedRow for specified day
   const windSpeedRowData = weatherData[
@@ -119,7 +131,9 @@ function createHourlyTable(city, day) {
     .join("")}</tr>`;
 
   // add windSpeedRow to the rows array
-  rows.push(windSpeedRow);
+  if(preferences.includes("wind_speed")){
+    rows.push(windSpeedRow);
+  }
 
   // returns rows
   return rows.join("");

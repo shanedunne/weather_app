@@ -11,13 +11,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
         -->
         <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css">
-
-    </head>
-    <body>
-        {% include "nav.njk" %}
-        {{ content | safe }}
-        {% include "footer.njk" %}
-        <!-- Scripts -->
         <script type="text/javascript" src="/js/weather_display.js"></script>
     <script type="text/javascript" src="/js/data/weather_data.js"></script>
     <script type="text/javascript" src="/js/data/weather_codes.js"></script>
@@ -27,6 +20,14 @@
     <script type="text/javascript" src="/js/components/city_other_day_cards.js"></script>
     <script type="text/javascript" src="/js/components/hourly_table.js"></script>
     <script type="text/javascript" src="/js/other_day_hourly_data.js"></script>
+
+    </head>
+    <body>
+        {% include "nav.njk" %}
+        {{ content | safe }}
+        {% include "footer.njk" %}
+        <!-- Scripts -->
+        
 
     <!-- Burger menu handler -->
     <script>

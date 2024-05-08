@@ -5,6 +5,10 @@
 function getHourlyData(cardId) {
     // split the id to recover the parameters needed to call the createHourlyTable function
     const [currentCity, selectedDay] = cardId.split("-");
+
+    // get local storage of preferences
+    let storedPreferences = localStorage.getItem("preferenceData");
+  let storedPreferencesParsed = JSON.parse(storedPreferences);
   
     // ensure the day index is greater than 0 i.e. not today as we already have this hourly data on the page
     if (selectedDay > 0) {
@@ -28,6 +32,6 @@ function getHourlyData(cardId) {
       console.log(currentCityObject + "here")
   
       // call function to create rows for the hourly table and insert into the html
-      otherDayHourlyData.innerHTML = createHourlyTable(currentCityObject, selectedDay);
+      otherDayHourlyData.innerHTML = createHourlyTable(currentCityObject, selectedDay, storedPreferencesParsed);
     }
   }

@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "chance_of_rain",
     "humidity",
     "wind_speed",
-    "wind_gust",
   ];
 
   if (!localStorage.getItem("preferenceData")) {
@@ -197,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const hourlyWeatherTable = document.querySelector("#hourlyTable");
 
       // call function to create rows for the hourly table and insert into the html
-      hourlyWeatherTable.innerHTML = createHourlyTable(currentCity, day);
+      hourlyWeatherTable.innerHTML = createHourlyTable(currentCity, day, storedPreferencesParsed);
 
       // REST OF WEEK
       // identify element on city focus page for showing the rest of the weeks weather
