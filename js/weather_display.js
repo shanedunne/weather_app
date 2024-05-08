@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("store names" + storedCitiesParsed);
 
     // if no favourite cities have been selected i.e. favourite cities array is empty, render element declaring this
-    if (storedCitiesParsed.length === 0) {
+    if (favouriteCities.length === 0) {
       let element = `
         <div class="column is-12 has-text-centered">
         <p class="is-size-3">
