@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Whether Weather</title>
-        <link rel="icon" type="image/x-icon" href="/images/favicon.png">
-        <link rel="stylesheet" href="/css/bulma.css">
-        <link rel="stylesheet" href="/css/style.css">
-        <!--Source for Bulma theme: https://jenil.github.io/bulmaswatch/cerulean/ 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whether Weather</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/bulma.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!--Source for Bulma theme: https://jenil.github.io/bulmaswatch/cerulean/ 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
         -->
-        <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css">
-        <script type="text/javascript" src="/js/weather_display.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/lux/bulmaswatch.min.css">
+    <script type="text/javascript" src="/js/weather_display.js"></script>
     <script type="text/javascript" src="/js/data/weather_data.js"></script>
     <script type="text/javascript" src="/js/data/weather_codes.js"></script>
     <script type="text/javascript" src="/js/data/all_cities.js"></script>
@@ -21,9 +22,10 @@
     <script type="text/javascript" src="/js/components/hourly_table.js"></script>
     <script type="text/javascript" src="/js/other_day_hourly_data.js"></script>
 
-    </head>
-    <body>
-        <header>
+</head>
+
+<body>
+    <header>
     <nav class="navbar pr-3" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
@@ -49,7 +51,7 @@
         </div>
     </nav>
 </header>
-        <main id="index" class="columns is-multiline box has-background-white px-0">
+    <main id="index" class="columns is-multiline box has-background-white px-0">
     <div class="column is-10 is-offset-1 has-text-centered">
         <p class="is-size-1">
             Today's Global Weather
@@ -60,7 +62,7 @@
     </div>
 
 </main>
-        <footer class="footer">
+    <footer class="footer">
     <div class="footer-container">
         <a href="https://www.instagram.com/">
             <i class="fa-brands fa-instagram"></i>
@@ -76,28 +78,29 @@
         </a>
     </div>
 </footer>
-        <!-- Scripts -->
-        
+    <!-- Scripts -->
+
 
     <!-- Burger menu handler -->
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // Get all "navbar-burger" elements
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get all "navbar-burger" elements
+            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-        // Add a click event on each of them
-        $navbarBurgers.forEach(el => {
-            el.addEventListener('click', () => {
-                // Get the target from the "data-target" attribute
-                const target = el.getAttribute('data-target');
-                const $target = document.getElementById(target);
+            // Add a click event on each of them
+            $navbarBurgers.forEach(el => {
+                el.addEventListener('click', () => {
+                    // Get the target from the "data-target" attribute
+                    const target = el.getAttribute('data-target');
+                    const $target = document.getElementById(target);
 
-                // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-                el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
+                    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+                    el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
+                });
             });
         });
-    });
     </script>
-    </body>
+</body>
+
 </html>

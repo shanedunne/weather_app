@@ -54,12 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // set the base index of days as today/0
   let day = 0;
 
-  // stores the city page user is on, if they are one one
-  /* const currentCity = allCities.find((city) =>
-    path.includes(`/city=${city.city}/`)
-  );
-*/
-
   // handle index page
   if (path === "/") {
     // identify element on index page to insert content
@@ -181,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
       });
     }
-  } else if (path === "/cityFocus/") {
+  } else if (path === "/cityfocus/") {
     // handle city focus page
     if (currentCity) {
       // TODAYS WEATHER SUMMARY
