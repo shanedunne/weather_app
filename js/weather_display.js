@@ -20,11 +20,12 @@ let today = d.getDay();
 
 document.addEventListener("DOMContentLoaded", () => {
   // temporary measure to only run certain funcions on certain pages
-  const path = window.location.pathname;
+  const path = window.location.pathname.toLowerCase();
 
   const urlParams = new URLSearchParams(window.location.search);
   const currentCityParam = urlParams.get("city");
   const currentCity = allCities.find((city) => city.city === currentCityParam);
+  console.log("current city: " + currentCity)
 
   // local storage
   // favourite cities set up
