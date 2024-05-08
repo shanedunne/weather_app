@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let favouriteCities = JSON.parse(localStorage.getItem('favouriteCities')) || [];
 
   let storedCities = localStorage.getItem("favouriteCities");
-  let storedCitiesParsed = JSON.parse(storedCities);
+  let storedCitiesParsed = storedCities ? JSON.parse(storedCities) : [];
 
   // preferences setup - set all checked as standard unless saved to localstorage differently
   let preferenceData = JSON.parse(localStorage.getItem("preferenceData")) || [
